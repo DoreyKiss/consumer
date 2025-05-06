@@ -53,10 +53,5 @@
     "ts-jest": "29.3.2",
     "tsx": "^4.19.1",
     "typescript": "5.8.3"
-  },
-  "dependencies": {
-    "@asteasolutions/zod-to-openapi": "^7.3.0",
-    "axios": "^1.9.0",
-    "zod": "^3.24.4"
   }
 }
