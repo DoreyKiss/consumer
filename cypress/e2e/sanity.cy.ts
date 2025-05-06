@@ -12,5 +12,6 @@ describe('CRUD movie', () => {
 
   it('should', () => {
     cy.log('say hello')
+    cy.task('log', 'Hello from cypress')
   })
 })
