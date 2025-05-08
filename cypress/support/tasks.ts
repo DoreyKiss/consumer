@@ -17,12 +17,8 @@ export default function tasks(on: Cypress.PluginEvents) {
   on('task', { log })
 
   // (a) => f(a)
-  // f
-
-  // (a) => f(a)
   // () => f()
   // f
-  on('task', { getMovies: (url: string) => getMovies(url) })
   on('task', { getMovies })
 
   // KEY: a pattern to fine tune cy task when handling multiple arguments
@@ -30,13 +26,6 @@ export default function tasks(on: Cypress.PluginEvents) {
   // by wrapping them inside an object. This ensures the argument is serializable,
   // which is a requirement for passing data between Cypress and Node.js.
   // Adjust functions to expect an object, even if the original function took multiple arguments.
-
-  /*   on('task', {
-    getMovieById({ url, id }: { url: string, id: number }) : =>
-      getMovireById(url, id)
-  })
-} */
-
   on('task', {
     // the cy task
     getMovieById: ({ url, id }: { url: string; id: number }) =>

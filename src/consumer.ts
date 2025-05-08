@@ -8,6 +8,7 @@ import type {
   MovieNotFoundResponse,
   UpdateMovieResponse
 } from './provider-schema/movie-types'
+import common from 'mocha/lib/interfaces/common'
 
 // Movie type from the provider, in the real world this would come from a published package
 export type Movie = {
@@ -38,7 +39,7 @@ const commonHeaders = {
 
 // Fetch all movies
 export const getMovies = (url: string): Promise<GetMovieResponse> =>
-  axios.get(`${url}/movies`).then(yieldData).catch(handleError)
+  axios.get(`${url}/movies`, commonHeaders).then(yieldData).catch(handleError)
 
 // Fetch a single movie by ID
 export const getMovieById = (
@@ -62,7 +63,7 @@ export const getMovieByName = (
 // Create a new movie
 export const addMovie = (
   url: string,
-  data: Partial<Omit<Movie, 'id'>>
+  data: Omit<Movie, 'id'>
 ): Promise<CreateMovieResponse | ConflictMovieResponse> =>
   axios
     .post(`${url}/movies`, data, commonHeaders)
