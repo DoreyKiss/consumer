@@ -8,7 +8,6 @@ import type {
   MovieNotFoundResponse,
   UpdateMovieResponse
 } from './provider-schema/movie-types'
-import common from 'mocha/lib/interfaces/common'
 
 // Movie type from the provider, in the real world this would come from a published package
 export type Movie = {

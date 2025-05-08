@@ -1,7 +1,7 @@
 import type { Movie } from '../../src/consumer'
 import { generateMovieWithoutId } from '../support/factories'
 import spok from 'cy-spok'
-import { retryableBefore } from 'cy-retryable-before'
+import { retryableBefore } from '../support/retryable-before'
 
 describe('CRUD movie', () => {
   const movie = generateMovieWithoutId()
