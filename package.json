@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "author": "Murat Ozcan",
+  "author": "Murat Ozcan, Dorottya Kiss",
   "license": "ISC",
   "scripts": {
     "cy:open-local": "cypress open --e2e --browser chrome --config-file cypress/config/local.config.ts",
@@ -15,7 +15,11 @@
     "test": "jest --detectOpenHandles --verbose --silent --config jest.config.ts",
     "test:watch": "jest --watch --config jest.config.ts",
     "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.jest.json",
-    "lint": "eslint --ext=.js,.ts,.tsx --fix"
+    "lint": "eslint --ext=.js,.ts,.tsx --fix",
+    "test:consumer": "rm -rf ./pacts && jest --config jest-pact.config.ts --detectOpenHandles",
+    "publish:pact": ". ./scripts/publish-pact.sh",
+    "can:i:deploy:consumer": ". ./scripts/can-i-deploy-consumer.sh",
+    "record:consumer:deployment": ". ./scripts/record-consumer-deployment.sh"
   },
   "devDependencies": {
     "@bahmutov/cy-api": "2.2.8",
@@ -52,7 +56,9 @@
     "prettier": "3.5.3",
     "ts-jest": "29.3.2",
     "tsx": "^4.19.4",
-    "typescript": "5.8.3"
+    "typescript": "5.8.3",
+    "@pact-foundation/pact": "^15.0.1",
+    "@pact-foundation/pact-cli": "^16.0.7"
   },
   "dependencies": {
     "@asteasolutions/zod-to-openapi": "7.3.0",
