@@ -33,3 +33,9 @@ Use the sample `.env.example` file to create a `.env` file of your own. These va
     npm run cy:run-local  # run mode
     npm run cy:run-local-fast  # no video or screen shots
 ```
+
+
+#### Articles
+
+
+(Strengthening Pact Contract Testing with TypeScript and Data Abstraction)[https://dev.to/muratkeremozcan/-strengthening-pact-contract-testing-with-typescript-and-data-abstraction-16hc]
