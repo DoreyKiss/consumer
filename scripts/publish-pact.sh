@@ -12,3 +12,11 @@ pact-broker publish ./pacts \
     --branch=$GITHUB_BRANCH \
     --broker-base-url=$PACT_BROKER_BASE_URL \
     --broker-token=$PACT_BROKER_TOKEN
+
+# Mark this version as deployed to the dev environment
+pact-broker record-deployment \
+    --environment=dev \
+    --pacticipant=WebConsumer \
+    --version=$GITHUB_SHA \
+    --broker-base-url=$PACT_BROKER_BASE_URL \
+    --broker-token=$PACT_BROKER_TOKEN
