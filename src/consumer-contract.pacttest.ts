@@ -107,7 +107,7 @@ describe('Movies API', () => {
       await pact
         .addInteraction()
         .given(stateName, stateParams)
-        .uponReceiving('a request to get a movie by name TRIGGER')
+        .uponReceiving('a request to get a movie by name')
         .withRequest('GET', '/movies', (builder) => {
           builder.query({ name: EXPECTED_BODY.name }) // Use query to specify query parameters
         })
