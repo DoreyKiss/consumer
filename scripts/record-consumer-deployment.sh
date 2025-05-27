@@ -6,7 +6,7 @@ set -e
 # Load environment variables
 . ./scripts/env-setup.sh
 
-# Only record deployment if on the main branch test
+# Only record deployment if on the main branch
 if [ "$GITHUB_BRANCH" = "main" ]; then
   # Record deployment for WebConsumer
   pact-broker record-deployment \
