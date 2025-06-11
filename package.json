@@ -1,7 +1,7 @@
 {
   "name": "node-template",
   "version": "1.0.0",
-  "description": "",
+  "description": "learning to test everything everywhere",
   "main": "index.js",
   "author": "Murat Ozcan, Dorottya Kiss",
   "license": "ISC",
